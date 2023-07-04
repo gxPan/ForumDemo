@@ -4,7 +4,7 @@ import com.forum.forumdemo.feignClient.ChatGPTFeignClient
 import com.forum.forumdemo.`object`.ChatRequest
 import org.springframework.stereotype.Component
 
-private const val GPT_HEADER = "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"
+private const val GPT_HEADER = "Bearer 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"
 
 @Component
 class ChatGPTClient(private val chatGPTFeignClient: ChatGPTFeignClient) {

@@ -1,15 +1,16 @@
 package com.forum.forumdemo.controller
 
 import com.forum.forumdemo.`object`.ChatRequest
-import com.forum.forumdemo.`object`.ChatResponse
 import com.forum.forumdemo.response.WeatherResponse
 import com.forum.forumdemo.service.ChatService
 import com.forum.forumdemo.service.WeatherService
+import mu.KotlinLogging
 import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RestController
+
+private val logger = KotlinLogging.logger {  }
 
 @RestController
 class HomePageController(
@@ -27,5 +28,7 @@ class HomePageController(
     @PostMapping("/chat")
     fun chat(
         @RequestBody chatRequest: ChatRequest
-    ): String = chatService.sendMsg(chatRequest)
+    ): String {
+        return chatService.sendMsg(chatRequest)
+    }
 }
